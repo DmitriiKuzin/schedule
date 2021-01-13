@@ -1,8 +1,13 @@
-<div class="row">
+<div class="row mt-1">
   <div class="col-4">
-    <div class="card my-auto"><p>{{time}}</p></div>
+    <input type="text" class="form-control" [(ngModel)]="time">
   </div>
-  <div class="col">
-    <div class="card"> <p>{{discipline}}</p></div>
+  <div class="col-8">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" [(ngModel)]="discipline">
+      <div class="input-group-append">
+        <button *ngIf="isEditing" (click)="deleteEntry.emit(this.id)" class="btn btn-link">x</button>
+      </div>
+    </div>
   </div>
 </div>
